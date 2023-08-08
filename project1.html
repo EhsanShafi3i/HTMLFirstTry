@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- This is your page title that appears on the browser window or tab -->
+    <title>Unit Conversions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ff0000;
+            margin-bottom: 20px;
+            width: 80%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Center align the content */
+            border-radius: 5px;
+        }
+
+        figure {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 200px;
+        }
+
+        fieldset {
+            border: 1px solid #ff0000;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label,
+        input,
+        button {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        aside {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ddd;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        #all-conversion-sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #home {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="home">
+        <!-- this is the main heading-->
+        <header><b>Unit Conversions</b></header>
+        <nav>
+            <a href="#temperature"><button><b>Temperature</b></button></a>
+            <a href="#weight"><button><b>Weight</b></button></a>
+            <a href="#distance"><button><b>Distance</b></button></a>
+        </nav>
+    </section>
+    <div id="all-conversion-sections">
+        <section id="temperature">
+            <div id="tmp">
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/thermo.png"
+                        width="200px" />
+                    <figcaption>Celsius to Fahrenheit Conversion</figcaption>
+                </figure>
+                <article>
+                    <fieldset>
+                        <legend>Temperature</legend>
+                        <label for="Temperature">Celsius</label><br>
+                        <input type="number" id="c"> <br>
+                        <button id="temperature">Convert</button><br>
+                        <input type="number" id="f"> <br>
+                        <label for="Temperature">Fahrenheit</label><br>
+                    </fieldset>
+                </article>
+                <aside>
+                    To convert celsius to fahrenheit yourself, use this formula replacing the `C` with your temperature
+                    in celsius: (C × 9/5) + 32
+                </aside>
+            </div>
+        </section>
+        <section id="weight">
+            <div>
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png"
+                        width="200px" />
+                    <figcaption>Kilogram to Pound Conversion</figcaption>
+                </figure>
+                <article>
+                    <fieldset>
+                        <legend>Weight</legend>
+                        <label for="Weight">Kilogram</label> <br>
+                        <input type="number" id="kg"> <br>
+                        <button id="Weight">Convert</button><br>
+                        <input type="number" id="lbs"> <br>
+                        <label for="Weight">Pounds</label><br>
+                    </fieldset>
+                </article>
+                <aside>
+                    To convert kilograms to pounds yourself, use this formula replacing the `kg` with your weight in
+                    kilograms: kg x 2.205
+                </aside>
+            </div>
+        </section>
+        <section id="distance">
+            <!-- Distance conversion section -->
+            <div id="dst">
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/speedo.png"
+                        width="200px" />
+                    <figcaption>Kilometer to Mile Conversion</figcaption>
+                </figure>
+                <article>
+                    <!-- This contains the specific elements for distance conversion -->
+                    <fieldset>
+                        <legend>Distance</legend>
+                        <!-- Label for Distance input -->
+                        <label for="Distance">Kilometers</label><br />
+                        <input type="number" id="km"><br />
+                        <!-- The conversion button -->
+                        <button id="distance">Convert</button><br />
+                        <!-- Label for Distance output -->
+                        <input type="number" id="m"><br />
+                        <label for="Distance">Miles</label><br />
+                    </fieldset>
+                </article>
+                <aside>
+                    To convert kilometers to miles yourself, use this formula replacing the `km` with your distance in
+                    kilometers: km ÷ 1.609
+                </aside>
+            </div>
+        </section>
+    </div>
+    <div>
+        <script>
+            // JavaScript code for temperature conversion
+            document.getElementById("temperature").addEventListener("click", function () {
+                var celsius = parseFloat(document.getElementById("c").value);
+                var fahrenheit = (celsius * 9 / 5) + 32;
+                document.getElementById("f").value = fahrenheit.toFixed(2);
+            });
+
+            // JavaScript code for weight conversion
+            document.getElementById("Weight").addEventListener("click", function () {
+                var kilogram = parseFloat(document.getElementById("kg").value);
+                var pounds = kilogram * 2.205;
+                document.getElementById("lbs").value = pounds.toFixed(2);
+            });
+
+            // JavaScript code for distance conversion
+            document.getElementById("distance").addEventListener("click", function () {
+                var kilometers = parseFloat(document.getElementById("km").value);
+                var miles = kilometers / 1.609;
+                document.getElementById("m").value = miles.toFixed(2);
+            });
+        </script>
+    </div>
+</body>
+</html>
