@@ -8,7 +8,7 @@ This is a simple web application that allows you to perform unit conversions for
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
