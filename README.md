@@ -27,7 +27,7 @@ The Unit Conversions Web App provides a user-friendly interface to quickly conve
 
 ## Usage
 
-1. Launch the web application by opening the `index.html` file.
+1. Launch the web application by opening the `project1.html` file.
 2. Select the conversion category from the navigation menu.
 3. Enter the value you want to convert in the input box.
 4. Click the "Convert" button to see the converted value in the output box.
