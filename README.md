@@ -23,7 +23,7 @@ The Unit Conversions Web App provides a user-friendly interface to quickly conve
 ## Installation
 
 1. Clone the repository to your local machine.
-2. Open the `index.html` file in a web browser.
+2. Open the `project1.html` file in a web browser.
 
 ## Usage
 
